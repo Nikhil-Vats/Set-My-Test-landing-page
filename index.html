@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Set My Test</title>
+    <style>
+        body {
+            background-color: #25274D;
+            font-family: "Trebuchet MS";
+        }
+        .link {
+            text-decoration: none;
+            color:whitesmoke;
+            float:left;
+            font-size: 20px;
+            font-weight:700;
+            padding-right:1vw;
+            padding-left: 1vw;
+            display: block;
+            transition: 0.4s;
+            height:100%;
+        }
+        .link:hover {
+            background-color: #464866;
+            color:#2E9CCA;
+        }
+        a:link, a:visited {
+            line-height:7vh;
+        }
+        #top__nav {
+            text-decoration: none;
+            top:0;
+            position: fixed;
+            width: 100%;
+            z-index: 10;
+            background-color: darkblue;
+            left:0;
+        }
+        #top__nav__menu {
+            display:flex;
+            justify-content: flex-end;
+            padding-right: 20px;
+            list-style-type: none;
+            background-color: darkblue;
+        }
+        #logo {
+            float:left;
+            position: absolute;
+            left: 1vw;
+        }
+
+    </style>
+<body>
+        <div id="top__nav">
+            <div id="card">
+            <ul id="top__nav__menu">
+                <img id="logo" src="Logo.png">
+                <li><a class="link" href="#">Home</a></li>
+                <li><a class="link" href="#">Free Trial</a></li>
+                <li><a class="link" href="#">Samples</a></li>
+                <li><a class="link" href="#">Q-Bank</a></li>
+                <li><a class="link" href="#">Help</a></li>
+            </ul>
+            </div>
+        </div>
+</body>    
+</html>
