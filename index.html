@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Set My Test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no ">
     <style>
          * {
             -moz-box-sizing: border-box;
@@ -163,7 +164,7 @@
         }
          .Submit_button {
             display: block;
-            margin:0 auto;
+            margin:0 auto; 
             color:#25274D;
             background-color: #2E9CCA;
             border-radius: 5px;
@@ -178,6 +179,7 @@
             border:1px solid #2E9CCA;
             background-color:#25274D;
             color:#2E9CCA;
+        }
     </style>
 <body>
         <div id="top__nav">
@@ -253,7 +255,7 @@
             <div>
                 <p class="appearOnScroll" style="font-size:50px;">Register here!</p>
             </div>
-            <form action="">
+            <form action="/addUser" method="post">
                 <div class="Fields">
                     <label class="form__fields">Full Name :<span class="star"> * </span></label>
                     <input class="input" type="text" name="full_name" placeholder="Enter your name" required><br/>
@@ -284,12 +286,13 @@
 <!--Javascript-->
     <!--Import Scroll Reveal.js -->    
     <script src="scrollreveal.js"></script>
-    
+    <script src="index.js"></script>
     <script>
         window.sr = ScrollReveal();
         sr.reveal('.appearOnScroll', {opacity: 0,duration:1000});
     </script>
     
+
     
 </body>    
 </html>
