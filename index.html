@@ -74,16 +74,24 @@
             left: 1vw;
             top:1vh;
         }
+        .Gallery {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 10vh;
+            position: relative;
+        }
         .revealCard {
             position: relative;
             background-color: #25274D;
-            width: 50%;
-            height: 800px;
+            width: 45%;
+            height: 400px;
             z-index: 1;
             float: left;
             border:1px solid #464866;
             perspective: 1000;
-            margin-top: 100px;
+            margin: 20px;
         }
         .card {
             width: 100%;
@@ -115,9 +123,9 @@
             width:100%;
             height: 100%;
         }
+
         #dynamicText {
             max-width: 100%;
-            height: 30vh;
             font-size: 40px;
             position: relative;
             padding: 30px;
@@ -126,6 +134,34 @@
             color: #2E9CCA;
             text-align: center;
             padding: 40px;
+        }
+                #form {
+            margin-top: 90px;
+            display: block;
+            position: relative;
+        }
+        .form__fields {
+            color:#2E9CCA;
+            font-size: 25px;
+            padding-bottom: 20px;
+            position: relative;
+            left:20vw;
+        }
+        .input {
+            position: absolute;
+            color:black;
+            left:50vw;
+            width: 30vw;
+        }
+        .input:focus {
+            background-color: #2E9CCA;
+            color:#25274D;
+        }
+        .star {
+            color:#2E9CCA;
+        }
+        .Fields {
+            padding-top: 20px;
         }
     </style>
 <body>
@@ -140,27 +176,54 @@
             </ul>
         </div>
     
-         <div class="revealCard">
+                 <div class="Gallery">
+            <div class="revealCard">
                 <div class="card">
                     <div class="face">
                         <p>Hey, hover to see the image.</p>
                     </div>
-                <div class="back face center">
+                    <div class="back face center">
                     <img class="img" src="https://images.unsplash.com/photo-1419064642531-e575728395f2?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=67fd942ed774f3de1db50cf3dd0065eb&w=1000&q=80">
-                </div>
-                </div>
-         </div>
-   
-        
-        <div class="revealCard">
-             <div class="card">
-                <div class="face">
-                    <p>Hey, hover to see the image.</p>
-                </div>
-                 <div class="back face center">
-                     <img class="img" src="http://country.southafrica.net/country/cache/ce_img_cache/local/country/uploads/images/Garden-Route_640_480_90_s_c1_c_t.jpg">
+                    </div>
                 </div>
             </div>
+   
+        
+            <div class="revealCard">
+                <div class="card">
+                    <div class="face">
+                        <img class="img" src="https://i.ytimg.com/vi/TdpBRZ0dZhw/maxresdefault.jpg">
+                    </div>
+                    <div class="back face center">
+                        <p>Here are the details of the image!  Here are the details of the image!  Here are the details of the image!</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="revealCard">
+                <div class="card">
+                    <div class="face">
+                        <img class="img" src="https://images.unsplash.com/photo-1419064642531-e575728395f2?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=67fd942ed774f3de1db50cf3dd0065eb&w=1000&q=80">
+                    </div>
+                    <div class="back face center">
+                        <p>Here are the details of the image!  Here are the details of the image!  Here are the details of the image!</p>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <div class="revealCard">
+                <div class="card">
+                    <div class="face">
+                        <p>Hey, hover to see the image.</p>                    
+                    </div>
+                    <div class="back face center">
+                        <img class="img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcrkTylq_NcR1xOsclrGiDsbEPFpRFlLK_UxpB4zuF9O3Uvwu5">
+                    </div>
+                </div>
+            </div>
+            
+            
         </div>
 
             <div id="dynamicText">
@@ -170,6 +233,8 @@
                 <p class="appearOnScroll">This text appears on scroll</p>
                 <p class="appearOnScroll">This text appears on scroll</p>
             </div>
+    
+    
 <!--Javascript-->
     <!--Import Scroll Reveal.js -->    
     <script src="scrollreveal.js"></script>
