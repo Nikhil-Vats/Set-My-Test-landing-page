@@ -93,6 +93,18 @@
             width:100%;
             height: 100%;
         }
+        #dynamicText {
+            max-width: 100%;
+            height: 30vh;
+            font-size: 40px;
+            position: relative;
+            padding: 30px;
+        }
+        .appearOnScroll {
+            color: #2E9CCA;
+            text-align: center;
+            padding: 40px;
+        }
     </style>
 <body>
         <div id="top__nav">
@@ -131,6 +143,21 @@
             </div>
         </div>
 
+            <div id="dynamicText">
+                <p class="appearOnScroll">See the magic below!</p>
+                <p class="appearOnScroll">Signup For Your Free Beta Trial Today!</p>   
+                <p class="appearOnScroll">This text appears on scroll</p>   
+                <p class="appearOnScroll">This text appears on scroll</p>
+                <p class="appearOnScroll">This text appears on scroll</p>
+            </div>
+<!--Javascript-->
+    <!--Import Scroll Reveal.js -->
+    <script src="https://unpkg.com/scrollreveal@3.3.2/dist/scrollreveal.min.js"></script>
+    
+    <script>
+        window.sr = ScrollReveal();
+        sr.reveal('.appearOnScroll', {opacity: 0,duration:1000});
+    </script>
     
     
 </body>    
