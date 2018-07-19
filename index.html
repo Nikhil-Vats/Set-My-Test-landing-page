@@ -163,6 +163,23 @@
         .Fields {
             padding-top: 20px;
         }
+         .Submit_button {
+            display: block;
+            margin:0 auto;
+            color:#25274D;
+            background-color: #2E9CCA;
+            border-radius: 5px;
+            min-width:10vw;
+            min-height:7vh;
+            border:none;
+            font-size: 30px;
+            font-family:"Trebuchet MS";
+            transition: 0.4s;
+        }
+        .Submit_button:hover {
+            border:1px solid #2E9CCA;
+            background-color:#25274D;
+            color:#2E9CCA;
     </style>
 <body>
         <div id="top__nav">
@@ -227,13 +244,44 @@
         </div>
 
             <div id="dynamicText">
-                <p class="appearOnScroll">See the magic below!</p>
                 <p class="appearOnScroll">Signup For Your Free Beta Trial Today!</p>   
                 <p class="appearOnScroll">This text appears on scroll</p>   
                 <p class="appearOnScroll">This text appears on scroll</p>
                 <p class="appearOnScroll">This text appears on scroll</p>
             </div>
+        
     
+        <div id="form">
+            <div>
+                <p class="appearOnScroll" style="font-size:50px;">Register here!</p>
+            </div>
+            <form action="">
+                <div class="Fields">
+                    <label class="form__fields">Full Name :<span class="star"> * </span></label>
+                    <input class="input" type="text" name="full_name" placeholder="Enter your name" required><br/>
+                </div>
+                <div class="Fields">
+                    <label class="form__fields">Address line 1:<span class="star"> * </span></label>
+                    <input class="input" type="text" name="address_line_1" placeholder="Address line 1" required><br/>
+                </div>    
+                <div class="Fields">
+                    <label class="form__fields">Address line 2:</label>
+                    <input class="input" type="text" name="address_line_2" placeholder="Address line 2"><br/>
+                </div>    
+                <div class="Fields">
+                    <label class="form__fields">Address line 3:</label>
+                    <input class="input" type="text" name="address_line_3" placeholder="Address line 3"><br/>
+                </div>
+                <div class="Fields">
+                    <label class="form__fields">Email :<span class="star"> * </span></label>
+                    <input class="input" type="email" name="email" placeholder="Enter your E-mail" required><br/>
+                </div>
+                <div class='Fields'>
+                    <button class="Submit_button" type="button">Submit</button>
+                </div>
+            </form>
+        </div>
+
     
 <!--Javascript-->
     <!--Import Scroll Reveal.js -->    
