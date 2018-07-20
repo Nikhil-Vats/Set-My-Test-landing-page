@@ -1,3 +1,5 @@
+const path = require('path');
+
 var express = require("express");
 var app = express();
 var port = 3000;
@@ -14,10 +16,9 @@ var nameSchema = new mongoose.Schema({
     email: String
 });
 var User = mongoose.model("User", nameSchema);
+const publicPath = path.join(__dirname,'/');
 
-app.get("/", (req, res) => {
-    res.sendFile(__dirname + "/index.html");
-});
+app.use(express.static(publicPath));
 
 app.post("/addUser", (req, res) => {
     var myData = new User(req.body);

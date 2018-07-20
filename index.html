@@ -4,7 +4,7 @@
     <title>Set My Test</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no ">
     <style>
-         * {
+             * {
             -moz-box-sizing: border-box;
             -webkit-box-sizing: border-box;
             box-sizing: border-box;
@@ -127,7 +127,6 @@
 
         #dynamicText {
             max-width: 100%;
-            font-size: 40px;
             position: relative;
             padding: 30px;
         }
@@ -136,7 +135,23 @@
             text-align: center;
             padding: 40px;
         }
-                #form {
+        .hideme
+        {
+            opacity:0;
+            font-size:40px;
+        }
+        @keyframes my-animation
+        {
+            0% {
+                transform: translateY(-10px);
+                transform: scale(0);
+            }
+            100% {
+                transform: translateY(-40px);
+                transform: scale(1);
+            }
+        }
+        #form {
             margin-top: 90px;
             display: block;
             position: relative;
@@ -200,7 +215,7 @@
                         <p>Hey, hover to see the image.</p>
                     </div>
                     <div class="back face center">
-                    <img class="img" src="https://images.unsplash.com/photo-1419064642531-e575728395f2?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=67fd942ed774f3de1db50cf3dd0065eb&w=1000&q=80">
+                    <img class="img" src="https://images.pexels.com/photos/206673/pexels-photo-206673.jpeg?auto=compress&cs=tinysrgb&h=350">
                     </div>
                 </div>
             </div>
@@ -244,39 +259,39 @@
         </div>
 
             <div id="dynamicText">
-                <p class="appearOnScroll">Signup For Your Free Beta Trial Today!</p>   
-                <p class="appearOnScroll">This text appears on scroll</p>   
-                <p class="appearOnScroll">This text appears on scroll</p>
-                <p class="appearOnScroll">This text appears on scroll</p>
+                <p class="appearOnScroll hideme">Signup For Your Free Beta Trial Today!</p>   
+                <p class="appearOnScroll hideme">This text appears on scroll</p>   
+                <p class="appearOnScroll hideme">This text appears on scroll</p>
+                <p class="appearOnScroll hideme">This text appears on scroll</p>
             </div>
         
     
         <div id="form">
             <div>
-                <p class="appearOnScroll" style="font-size:50px;">Register here!</p>
+                <p class="appearOnScroll hideme" style="font-size:50px;">Register here!</p>
             </div>
             <form action="/addUser" method="post">
-                <div class="Fields">
+                <div class="Fields hideme">
                     <label class="form__fields">Full Name :<span class="star"> * </span></label>
                     <input class="input" type="text" name="full_name" placeholder="Enter your name" required><br/>
                 </div>
-                <div class="Fields">
+                <div class="Fields hideme">
                     <label class="form__fields">Address line 1:<span class="star"> * </span></label>
                     <input class="input" type="text" name="address_line_1" placeholder="Address line 1" required><br/>
                 </div>    
-                <div class="Fields">
+                <div class="Fields hideme">
                     <label class="form__fields">Address line 2:</label>
                     <input class="input" type="text" name="address_line_2" placeholder="Address line 2"><br/>
                 </div>    
-                <div class="Fields">
+                <div class="Fields hideme">
                     <label class="form__fields">Address line 3:</label>
                     <input class="input" type="text" name="address_line_3" placeholder="Address line 3"><br/>
                 </div>
-                <div class="Fields">
+                <div class="Fields hideme">
                     <label class="form__fields">Email :<span class="star"> * </span></label>
                     <input class="input" type="email" name="email" placeholder="Enter your E-mail" required><br/>
                 </div>
-                <div class='Fields'>
+                <div class="Fields hideme">
                     <input class="Submit_button" type="submit" value="Submit">
                 </div>
             </form>
@@ -284,12 +299,33 @@
 
     
 <!--Javascript-->
-    <!--Import Scroll Reveal.js -->    
-    <script src="scrollreveal.js"></script>
     <script src="index.js"></script>
+    <script src="jquery-3.3.1.min.js"></script>
+
     <script>
-        window.sr = ScrollReveal();
-        sr.reveal('.appearOnScroll', {opacity: 0,duration:1000});
+        $(document).ready(function() {
+    
+        /* When window is scrolled */
+        $(window).scroll( function(){
+    
+        /* Check the location of elements with 'hideme'*/
+        $('.hideme').each( function(i){
+            
+            var bottom_of_object = $(this).offset().top + $(this).outerHeight();
+            var bottom_of_window = $(window).scrollTop() + $(window).height();
+            
+            /* If the object is completely visible in the window, fade it it */
+            if( bottom_of_window > bottom_of_object ){
+                
+                $(this).animate({'opacity':'1'},1000);
+                $(this).css({"animation":"my-animation 1s"});                    
+            }
+            
+        }); 
+    
+        });
+    
+        });
     </script>
     
 
