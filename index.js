@@ -7,10 +7,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 var mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
-mongoose.connect("mongodb://localhost:27017/set-my-test");
+mongoose.connect("mongodb://localhost:27017/NewProject");
 var nameSchema = new mongoose.Schema({
-    fullName: String,
-    address: String,
+    full_Name: String,
+    address_line_1: String,
     email: String
 });
 var User = mongoose.model("User", nameSchema);
